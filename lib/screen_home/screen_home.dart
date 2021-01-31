@@ -3,7 +3,6 @@ import 'package:flutter_app02/model/model_quiz.dart';
 import 'package:flutter_app02/screen/screen_quiz.dart';
 
 class HomeScreen extends StatefulWidget{
-
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -32,7 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
     double width = screenSize.width;
     double height = screenSize.height;
 
-    return SafeArea(child : Scaffold(
+    return SafeArea(
+      child : Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('My Quiz App'),
@@ -86,9 +86,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   color: Colors.deepOrange,
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => QuizScreen(
-                      quizs: quizs,
-                    )));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => QuizScreen(
+                          quizs: quizs,
+                        ),
+                      ),
+                    );
                   },
                 ),
               ),
@@ -96,8 +101,9 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-    ));
-  }
+    ),
+  );
+}
 
   Widget _buildStep(double width, String title){
     return Container(

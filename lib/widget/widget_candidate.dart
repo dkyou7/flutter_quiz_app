@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CandWidget extends StatefulWidget{
+class CandWidget extends StatefulWidget {
   VoidCallback tap;
   String text;
   int index;
@@ -13,18 +13,16 @@ class CandWidget extends StatefulWidget{
 }
 
 class _CandWidgetState extends State<CandWidget>{
-
-
   @override
   Widget build(BuildContext context) {
     return Container(
       width: widget.width * 0.8,
       height: widget.width * 0.1,
       padding: EdgeInsets.fromLTRB(
-          widget.width * 0.048,
-          widget.width * 0.024,
-          widget.width * 0.048,
-          widget.width * 0.24,
+        widget.width * 0.048,
+        widget.width * 0.024,
+        widget.width * 0.048,
+        widget.width * 0.024,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -45,7 +43,7 @@ class _CandWidgetState extends State<CandWidget>{
             widget.answerState = !widget.answerState;
           });
         },
-      )
+      ),
     );
   }
 }
