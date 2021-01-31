@@ -9,10 +9,11 @@ class CandWidget extends StatefulWidget {
   bool answerState;
 
   CandWidget({this.tap, this.index, this.width, this.text, this.answerState});
+
   _CandWidgetState createState() => _CandWidgetState();
 }
 
-class _CandWidgetState extends State<CandWidget>{
+class _CandWidgetState extends State<CandWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,10 +26,9 @@ class _CandWidgetState extends State<CandWidget>{
         widget.width * 0.024,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.deepOrange),
-        color: widget.answerState ? Colors.deepOrange : Colors.white
-      ),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.deepOrange),
+          color: widget.answerState ? Colors.deepOrange : Colors.white),
       child: InkWell(
         child: Text(
           widget.text,

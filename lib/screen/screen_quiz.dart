@@ -2,12 +2,15 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app02/model/model_quiz.dart';
+import 'package:flutter_app02/screen_home/screen_result.dart';
 import 'package:flutter_app02/widget/widget_candidate.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 class QuizScreen extends StatefulWidget {
   List<Quiz> quizs;
+
   QuizScreen({this.quizs});
+
   @override
   _QuizScreenState createState() => _QuizScreenState();
 }
@@ -105,14 +108,20 @@ class _QuizScreenState extends State<QuizScreen> {
                   onPressed: _answers[_currentIndex] == -1
                       ? null
                       : () {
-                    if (_currentIndex == widget.quizs.length - 1) {
-
-                    } else {
-                      _answerState = [false, false, false, false];
-                      _currentIndex += 1;
-                      _controller.next();
-                    }
-                  },
+                          if (_currentIndex == widget.quizs.length - 1) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ResultScreen(
+                                          answers: _answers,
+                                          quizs: widget.quizs,
+                                        )));
+                          } else {
+                            _answerState = [false, false, false, false];
+                            _currentIndex += 1;
+                            _controller.next();
+                          }
+                        },
                 ),
               ),
             ),
