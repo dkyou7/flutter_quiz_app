@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app02/model/model_quiz.dart';
@@ -66,13 +67,32 @@ class _QuizScreenState extends State<QuizScreen> {
           Container(
             width: width * 0.8,
             padding: EdgeInsets.only(top: width * 0.012),
-            child: Text(
+            child: AutoSizeText(
               quiz.title,
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              style: TextStyle(
+                fontSize: width * 0.048,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          )
+          ),
+          Expanded(
+            child: Container(),
+          ),
+          Column(
+            children: _buildCandiates(width,quiz),
+          ),
         ],
       ),
-    )
+    );
+  }
+
+  List<Widget> _buildCandiates(double width, Quiz quiz) {
+    List<Widget> _chlidren = [];
+    for (int i = 0; i < 4;i ++){
+      _children.add();
+    }
   }
 
 
